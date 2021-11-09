@@ -1,0 +1,38 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<main >
+  <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
+  <form method = "post">
+    {% csrf_token %}
+    <input       
+    id="symbol" 
+    type="text"
+    name="symbol"
+      placeholder = "Símbolo do ativo"
+    ></input>
+    <button type="submit">Pesquisar</button>
+  </form>
+  <li>
+    <div>{{note.symbol}}</div>
+    <div>{{note.value}}</div>
+    <div>{{note.date}}</div>
+  </li>
+  
+
+  <ul>
+    Last Searches:
+    {% for note in notes %}
+    <h3>
+
+
+      {{ note.symbol }}
+
+      {{note.value}}
+
+      {{note.date}}
+    </h3>
+    {% endfor %}
+  </ul>
+{% endblock %}
