@@ -6,10 +6,12 @@
   <img src="{% static 'notes/img/cjfinance.jpg' %}" class='logo' />
   <h1>CJ FINANCE - A MELHOR PLATAFORMA PARA CHECAR OS ÚLTIMOS PREÇOS DE AÇÕES!!!</h1>
 </div>
-<main >
+<main class = "all">
   <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
-  <form class='form-card' method = "post">
+  <div class = "leftside">
+  <form class='form-card' method = "post";>
     {% csrf_token %}
+    <h1 >Encontre valores de qualquer ativo</h1>
     <input 
     class ="form-card-symbol"      
     id="symbol" 
@@ -31,20 +33,22 @@
       <td>{{note.date}}</td>
     </tbody>
   </table>
-  
-    <p>Últimas empresas pesquisadas:</p>
-    {% for note in notes %}
+</div>
+  <div class = 'rightside'>
+    <h2>Últimas empresas pesquisadas:</h2>
     <table>
       <thead>
         <th>Símbolo</th>
         <th>Valor (USD)</th>
         <th>Data</th>
       </thead>
+    {% for note in notes %}
       <tbody>
         <td>{{note.symbol}}</td>
         <td>{{note.value}}</td>
         <td>{{note.date}}</td>
-      </tbody>
-    </table>
+      </tbody>    
     {% endfor %}
+  </table>
+</div>
 {% endblock %}

@@ -28,5 +28,5 @@ def index(request):
         return redirect('index')
     else:
         last_note = Fin.objects.last()
-        notes = Fin.objects.all()
+        notes = Fin.objects.all().reverse()
         return render(request, 'notes/index.html', {'note': last_note, 'notes': notes})

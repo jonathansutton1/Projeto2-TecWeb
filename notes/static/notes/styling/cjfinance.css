@@ -1,8 +1,11 @@
-h1 {
+.h1 {
     font-family: "Work Sans", sans-serif;
     justify-content: center;
     align-items: center;
     font-size: x-large;
+}
+.all{
+    display: flex;
 }
 
 .appbar{
@@ -29,6 +32,7 @@ h1 {
     flex-direction: column;
     justify-content: right;
     align-items: right;
+    flex: 1;
 }
 
 .form-card-symbol{
@@ -46,7 +50,12 @@ h1 {
     background-color: #42f56f;
     padding: 0.2rem;
 }
-
+.rightside{
+    flex:2;
+}
+.leftside{
+    flex:1;
+}
 table,th,td{
     border: 1px solid black;
     font-family: "Work Sans", sans-serif;
