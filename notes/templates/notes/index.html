@@ -2,37 +2,49 @@
 {% load static %}
 
 {% block content %}
+<div class='appbar'>
+  <img src="{% static 'notes/img/cjfinance.jpg' %}" class='logo' />
+  <h1>CJ FINANCE - A MELHOR PLATAFORMA PARA CHECAR OS ÚLTIMOS PREÇOS DE AÇÕES!!!</h1>
+</div>
 <main >
   <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
-  <form method = "post">
+  <form class='form-card' method = "post">
     {% csrf_token %}
-    <input       
+    <input 
+    class ="form-card-symbol"      
     id="symbol" 
     type="text"
     name="symbol"
-      placeholder = "Símbolo do ativo"
+    placeholder = "Símbolo do ativo"
     ></input>
-    <button type="submit">Pesquisar</button>
+    <button class='button' type="submit">Pesquisar</button>
   </form>
-  <li>
-    <div>{{note.symbol}}</div>
-    <div>{{note.value}}</div>
-    <div>{{note.date}}</div>
-  </li>
+  <table>
+    <thead>
+      <th>Símbolo</th>
+      <th>Valor (USD)</th>
+      <th>Data</th>
+    </thead>
+    <tbody>
+      <td>{{note.symbol}}</td>
+      <td>{{note.value}}</td>
+      <td>{{note.date}}</td>
+    </tbody>
+  </table>
   
-
-  <ul>
-    Last Searches:
+    <p>Últimas empresas pesquisadas:</p>
     {% for note in notes %}
-    <h3>
-
-
-      {{ note.symbol }}
-
-      {{note.value}}
-
-      {{note.date}}
-    </h3>
+    <table>
+      <thead>
+        <th>Símbolo</th>
+        <th>Valor (USD)</th>
+        <th>Data</th>
+      </thead>
+      <tbody>
+        <td>{{note.symbol}}</td>
+        <td>{{note.value}}</td>
+        <td>{{note.date}}</td>
+      </tbody>
+    </table>
     {% endfor %}
-  </ul>
 {% endblock %}
