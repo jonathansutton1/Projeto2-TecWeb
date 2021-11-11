@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-*%4qp9qhn5ygd0a@aj*!5+ew#%sdx@-*q@-idv_j&nxu-$dxbs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['fast-temple-59778.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -139,4 +138,3 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-ALLOWED_HOSTS = ['fast-temple-59778.herokuapp.com', 'localhost', '127.0.0.1']
